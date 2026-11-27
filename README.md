@@ -108,6 +108,6 @@ streamlit run app/streamlit_app.py     # abre o dashboard
 ---
 
 <p align="center">
-Feito por <b>Thiago</b> · Controles Internos → Dados & TI<br>
+Feito por <b>Thiago Rodrigues</b> · Estudante de Gestão de TI · Análise de Dados para Inteligência Comercial<br>
 <a href="https://www.linkedin.com/in/thiago-rodrigues-30b54717b/">LinkedIn</a>
 </p>
