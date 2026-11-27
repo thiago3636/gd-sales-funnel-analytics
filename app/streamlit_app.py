@@ -51,13 +51,13 @@ tab1, tab2, tab3 = st.tabs(["📊 Funil", "📈 Canais e evolução", "🛡️ Q
 with tab1:
     f = m.funnel(df)
     fig = px.funnel(f, x="negociacoes", y="etapa", color_discrete_sequence=[NAVY])
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     lr = m.loss_reasons(df).reset_index()
     lr.columns = ["motivo", "qtd"]
     st.subheader("Motivos de perda")
     st.plotly_chart(px.bar(lr, x="qtd", y="motivo", orientation="h",
                            color_discrete_sequence=[AMBER]).update_yaxes(autorange="reversed"),
-                    use_container_width=True)
+                    width="stretch")
 
 with tab2:
     c1, c2 = st.columns(2)
@@ -66,15 +66,15 @@ with tab2:
         col.subheader(f"Taxa de ganho por {by}")
         col.plotly_chart(px.bar(conv, x=by, y="taxa_ganho", text_auto=".0%",
                                 color_discrete_sequence=[NAVY]).update_yaxes(tickformat=".0%"),
-                         use_container_width=True)
+                         width="stretch")
     mo = m.monthly(df).reset_index()
     st.subheader("Evolução mensal")
     st.plotly_chart(px.line(mo, x="mes", y=["criadas", "ganhas"],
-                            color_discrete_sequence=["#8A94A6", AMBER]), use_container_width=True)
+                            color_discrete_sequence=["#8A94A6", AMBER]), width="stretch")
 
 with tab3:
     st.markdown("Testes aplicados sobre **100% da população** (antes da deduplicação).")
     res = q.run_checks(flt)
-    st.dataframe(res.style.format({"pct": "{:.2%}"}), use_container_width=True, hide_index=True)
+    st.dataframe(res.style.format({"pct": "{:.2%}"}), width="stretch", hide_index=True)
     code = st.selectbox("Ver exceções do teste", res["codigo"])
-    st.dataframe(q.exceptions(flt, code), use_container_width=True, hide_index=True)
+    st.dataframe(q.exceptions(flt, code), width="stretch", hide_index=True)
