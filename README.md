@@ -10,6 +10,8 @@
   <img src="https://img.shields.io/badge/licença-MIT-8A94A6">
 </p>
 
+<p align="center"><a href="https://funil-gd-thiago.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Abrir no Streamlit"></a><br><b>🚀 <a href="https://funil-gd-thiago.streamlit.app/">Ver dashboard ao vivo</a></b></p>
+
 > **Dados 100% sintéticos.** A empresa *Helios GD* é fictícia. Nenhum dado real de clientes ou de empresas foi utilizado — a base é gerada por script com seed fixa, o que torna toda a análise reprodutível.
 
 ---
@@ -101,7 +103,7 @@ streamlit run app/streamlit_app.py     # abre o dashboard
 
 ## 🔜 Próximos passos
 
-- [ ] Publicar o dashboard no Streamlit Community Cloud
+- [x] Publicar o dashboard no Streamlit Community Cloud
 - [ ] Modelo de propensão de ganho (regressão logística)
 - [ ] Análise de coorte por mês de criação
 
